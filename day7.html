@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <title>My Changes</title>
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> -->
+
+    <style>
+        h1 {
+            color: rgb(6, 153, 109);
+            font-family: sans-serif;
+        }
+
+        h2 {
+            color: rgb(2, 131, 136);
+            font-family: Cursive;
+        }
+
+        button {
+            background-color: rgb(188, 248, 250);
+            font-size: 15px;
+            border-radius: 20px;
+        }
+
+        .myHeading {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="changes">
+            <h1>New Title</h1>
+            <h2 id="ex1Title">Newer Title</h2>
+            <input type="text" id="ex1Text" value="">
+            <button id="ex1">Try</button>
+        </div>
+    </header>
+
+    <main>
+        <hr>
+        <div class="changes">
+            <p>The HTML "p" element represents a paragraph. Paragraphs are usually represented in visual media as blocks
+                of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs
+                can be any structural grouping of related content, such as images or form fields.</p>
+            <button id="changePText">Change p text here</button>
+        </div>
+
+        <ul id="firstList">
+            <li>1st</li>
+            <li>2nd</li>
+            <li>3rd</li>
+        </ul>
+
+        <ul id="secondList">
+            <li>1st</li>
+            <li>2nd</li>
+            <li>3rd</li>
+        </ul>
+
+        <a href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/strive.school">This link goes
+            to Strive School</a>
+
+        <div>
+            <p>This text is just for the exercise</p>
+        </div>
+
+        <div>
+            <input type="text" id="input-field" placeholder="input field for the exercise">
+        </div>
+    </main>
+
+    <footer>
+        <p>And this text is just for the exercise too!</p>
+    </footer>
+    <script>
+
+        // const changeTitle = function (NewTitle) {
+        //     newTitle = document.title = ("headers");
+        //     newTitle.innerText = "I'll trying my best.";
+        //     newTitle.style.color = "green";
+        // };
+        // newTitle();
+        let ex1 = document.getElementById("ex1");
+        let ex1Title = document.getElementById("ex1Title");
+        let ex1Text = document.getElementById("ex1Text");
+        ex1Text.value = "Write here";
+        const changeTitle = function (newTitle) {
+            ex1title.innerText = newTitle;
+        };
+        ex1.onclick = function () {
+            ex1title.innerText = ex1text.value;
+        };
+
+        let changePText = document.getElementById("changePText");
+        let newPText = document.querySelector("div p");
+        let changeAllPText = false;
+        const changePcontent = function () {
+            if (!changeAllPText) {
+                newPText.innerText = "Every time you want to begin a new paragraph, you use the paragraph tag.";
+            } else {
+                newPText = "The HTML "p" element represents a paragraph. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields."
+            }
+            changeAllPText = !changeAllPText;
+        };
+        changePText.onclick = function () {
+            changePcontent();
+        };
+
+
+    </script>
+
+</body>
+
+</html>
