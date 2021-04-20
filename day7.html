@@ -8,6 +8,7 @@
         h1 {
             color: rgb(6, 153, 109);
             font-family: sans-serif;
+            padding: 15px;
         }
 
         h2 {
@@ -19,11 +20,25 @@
             background-color: rgb(188, 248, 250);
             font-size: 15px;
             border-radius: 20px;
+            margin: 10px;
         }
 
-        .myHeading {
-            color: red;
+        body{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
         }
+
+        p{
+            margin: auto;
+            font-size: 20px;
+        }
+        #inputs {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        }
+        
     </style>
 </head>
 
@@ -37,7 +52,7 @@
         </div>
     </header>
 
-    <main>
+    <body>
         <hr>
         <div class="changes">
             <p>The HTML "p" element represents a paragraph. Paragraphs are usually represented in visual media as blocks
@@ -65,14 +80,18 @@
             <p>This text is just for the exercise</p>
         </div>
 
+        <footer>
+            <p>This text is just for the exercise too!</p>
+        </footer>
         <div>
             <input type="text" id="input-field" placeholder="input field for the exercise">
         </div>
-    </main>
+        <div id="message" style="display: none">
+            <h3>Yes! You clicked it</h3>
+          </div>
+        </body>
 
-    <footer>
-        <p>And this text is just for the exercise too!</p>
-    </footer>
+    
     <script>
 
         // const changeTitle = function (NewTitle) {
@@ -105,6 +124,22 @@
         };
         changePText.onclick = function () {
             changePcontent();
+        };
+
+        const grabMessage = function (event) {
+        console.log(event);
+
+        let textInput = document.getElementById("text");
+        let textValue = textInput.value;
+
+        document.getElementById("message").style.display = "block";
+
+        const createButton = function () {
+            let newButton = document.createElement("button");
+            newButton.innerText = "CLICK ME!";
+        newButton.addEventListener("click", grabMessage);
+        let parent = document.querySelector("body");
+        parent.appendChild(newButton);
         };
 
 
